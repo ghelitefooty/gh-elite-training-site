@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GH Elite Training — Social Media Flyers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1d;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .label {
+    color: #9a978f;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+
+  .post-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ============================================================
+     DESIGN 1 — Instagram Square 1:1 "Train Your Position"
+     Screenshot at 600x600
+  ============================================================ */
+  .d1 {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0b;
+  }
+
+  .d1 .bg {
+    position: absolute;
+    inset: 0;
+    background: url('assets/greggs-college-action.png') center center / cover no-repeat;
+    filter: brightness(0.45) saturate(0.6);
+  }
+
+  .d1 .tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(10,10,11,0.0) 0%,
+      rgba(10,10,11,0.15) 30%,
+      rgba(10,10,11,0.72) 65%,
+      rgba(10,10,11,0.97) 100%
+    );
+  }
+
+  .d1 .gold-bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: #c9a24c;
+  }
+
+  .d1 .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 36px;
+  }
+
+  .d1 .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .d1 .logo {
+    height: 52px;
+    width: auto;
+    border-radius: 3px;
+  }
+
+  .d1 .tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #c9a24c;
+    border: 1px solid #c9a24c;
+    padding: 5px 10px;
+    border-radius: 2px;
+  }
+
+  .d1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 82px;
+    line-height: 0.9;
+    color: #f3f1ec;
+    letter-spacing: .02em;
+  }
+
+  .d1 .headline span { color: #c9a24c; }
+
+  .d1 .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .d1 .sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #9a978f;
+    line-height: 1.9;
+  }
+
+  .d1 .pricing {
+    text-align: right;
+  }
+
+  .d1 .pricing-line {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #f3f1ec;
+    letter-spacing: .04em;
+  }
+
+  .d1 .pricing-line span {
+    color: #c9a24c;
+    font-size: 36px;
+  }
+
+  .d1 .pricing-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #9a978f;
+    margin-top: 2px;
+  }
+
+  .d1 .cta {
+    margin-top: 14px;
+    display: inline-block;
+    background: #c9a24c;
+    color: #0a0a0b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 2px;
+  }
+
+  /* ============================================================
+     DESIGN 2 — Instagram Story 9:16 Pricing
+     Screenshot at 400x711
+  ============================================================ */
+  .d2 {
+    width: 400px;
+    height: 711px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0b;
+  }
+
+  .d2 .bg {
+    position: absolute;
+    inset: 0;
+    background: url('assets/greggs-riverhounds-academy.jpeg') center 20% / cover no-repeat;
+    filter: brightness(0.3) saturate(0.4);
+  }
+
+  .d2 .tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10,10,11,0.55) 0%,
+      rgba(10,10,11,0.1) 25%,
+      rgba(10,10,11,0.1) 50%,
+      rgba(10,10,11,0.92) 75%,
+      rgba(10,10,11,1) 100%
+    );
+  }
+
+  /* diagonal gold accent lines */
+  .d2 .lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.18;
+  }
+
+  .d2 .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 36px;
+  }
+
+  .d2 .logo { height: 56px; width: auto; border-radius: 3px; }
+
+  .d2 .eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #c9a24c;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .d2 .eyebrow::before,
+  .d2 .eyebrow::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 28px;
+    background: #c9a24c;
+  }
+
+  .d2 .middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .d2 .main-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: .95;
+    color: #f3f1ec;
+    letter-spacing: .03em;
+  }
+
+  .d2 .main-text span { color: #c9a24c; }
+
+  .d2 .divider-line {
+    width: 60px;
+    height: 1px;
+    background: #c9a24c;
+    margin: 20px auto;
+  }
+
+  .d2 .price-block {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .d2 .price-item {
+    text-align: center;
+    border: 1px solid rgba(201,162,76,0.4);
+    border-radius: 4px;
+    padding: 20px 24px;
+    background: rgba(201,162,76,0.05);
+    min-width: 130px;
+  }
+
+  .d2 .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: #c9a24c;
+    line-height: 1;
+  }
+
+  .d2 .price-unit {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #9a978f;
+    margin-top: 2px;
+  }
+
+  .d2 .price-type {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #f3f1ec;
+    margin-top: 6px;
+  }
+
+  .d2 .bottom {
+    width: 100%;
+    text-align: center;
+  }
+
+  .d2 .contact {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #9a978f;
+    line-height: 2;
+  }
+
+  .d2 .contact strong {
+    color: #f3f1ec;
+  }
+
+  .d2 .cta-btn {
+    display: block;
+    margin-top: 18px;
+    background: #c9a24c;
+    color: #0a0a0b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 14px 0;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ============================================================
+     DESIGN 3 — Coaches Card Square (1:1)
+     Screenshot at 600x600
+  ============================================================ */
+  .d3 {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background: #131315;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .d3 .photos {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .d3 .photo-half {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .d3 .photo-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.55) saturate(0.5);
+    display: block;
+  }
+
+  .d3 .photo-half .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(10,10,11,0.85) 100%);
+  }
+
+  .d3 .photo-half .name {
+    position: absolute;
+    bottom: 16px;
+    left: 18px;
+    right: 18px;
+  }
+
+  .d3 .photo-half .name h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: .04em;
+    color: #f3f1ec;
+    line-height: 1;
+  }
+
+  .d3 .photo-half .name p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #c9a24c;
+    margin-top: 4px;
+  }
+
+  .d3 .center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #c9a24c;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  .d3 .logo-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: #0a0a0b;
+    border: 2px solid #c9a24c;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .d3 .logo-center img { width: 56px; height: 56px; object-fit: cover; border-radius: 50%; }
+
+  .d3 .bottom-bar {
+    background: #0a0a0b;
+    border-top: 1px solid #2a2a2e;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .d3 .bottom-bar .site {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #9a978f;
+  }
+
+  .d3 .bottom-bar .cta {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0a0a0b;
+    background: #c9a24c;
+    padding: 8px 18px;
+    border-radius: 2px;
+  }
+
+  .d3 .top-bar {
+    background: #0a0a0b;
+    border-bottom: 1px solid #2a2a2e;
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .d3 .top-bar .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: .1em;
+    color: #f3f1ec;
+  }
+
+  .d3 .top-bar .brand span { color: #c9a24c; }
+
+  .d3 .top-bar .tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #c9a24c;
+    border: 1px solid rgba(201,162,76,0.5);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ============================================================
+     DESIGN 4 — Landscape Ad / Facebook (3:2)
+     Screenshot at 660x440
+  ============================================================ */
+  .d4 {
+    width: 660px;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0b;
+    display: flex;
+  }
+
+  .d4 .photo-side {
+    width: 52%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .d4 .photo-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.6) saturate(0.6);
+    display: block;
+  }
+
+  .d4 .photo-side .tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 50%, rgba(10,10,11,1) 100%);
+  }
+
+  .d4 .photo-side .gold-stripe {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 4px;
+    background: #c9a24c;
+  }
+
+  .d4 .text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 36px 32px 40px;
+  }
+
+  .d4 .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .d4 .logo { height: 44px; width: auto; border-radius: 3px; }
+
+  .d4 .eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #c9a24c;
+    margin-bottom: 10px;
+  }
+
+  .d4 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: .92;
+    color: #f3f1ec;
+    letter-spacing: .02em;
+  }
+
+  .d4 .headline span { color: #c9a24c; }
+
+  .d4 .body {
+    font-size: 12px;
+    color: #9a978f;
+    line-height: 1.65;
+    margin-top: 12px;
+  }
+
+  .d4 .pricing-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .d4 .price-pill {
+    border: 1px solid rgba(201,162,76,0.5);
+    border-radius: 3px;
+    padding: 10px 16px;
+    background: rgba(201,162,76,0.06);
+  }
+
+  .d4 .price-pill .amt {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #c9a24c;
+    line-height: 1;
+  }
+
+  .d4 .price-pill .lbl {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #9a978f;
+    margin-top: 2px;
+  }
+
+  .d4 .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .d4 .contact {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: #9a978f;
+    line-height: 2;
+  }
+
+  .d4 .contact strong { color: #f3f1ec; }
+
+  .d4 .cta {
+    background: #c9a24c;
+    color: #0a0a0b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ DESIGN 1 -->
+<div class="post-wrap">
+  <div class="label">① Instagram Square — "Train Your Position"</div>
+  <div class="d1">
+    <div class="bg"></div>
+    <div class="tint"></div>
+    <div class="gold-bar"></div>
+    <div class="content">
+      <div class="top-row">
+        <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        <span class="tag">Position-Specific Coaching</span>
+      </div>
+      <div>
+        <div class="headline">TRAIN<br><span>YOUR</span><br>POSITION.</div>
+      </div>
+      <div class="bottom">
+        <div class="sub">
+          Real game scenarios.<br>
+          Real technique.<br>
+          ghelitefooty@gmail.com
+        </div>
+        <div class="pricing">
+          <div class="pricing-line"><span>$65</span> Individual</div>
+          <div class="pricing-label">per session</div>
+          <div class="pricing-line" style="margin-top:6px;"><span>$50</span> Group</div>
+          <div class="pricing-label">per player</div>
+          <a href="https://calendar.app.google/3c8K9gwPPUSbHGCK7" target="_blank" class="cta" style="margin-top:14px; display:inline-block;">Book Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ DESIGN 2 -->
+<div class="post-wrap">
+  <div class="label">② Instagram Story — Pricing</div>
+  <div class="d2">
+    <div class="bg"></div>
+    <div class="tint"></div>
+    <svg class="lines" viewBox="0 0 400 711" preserveAspectRatio="xMidYMid slice">
+      <line x1="-100" y1="0" x2="500" y2="711" stroke="#c9a24c" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="600" y2="711" stroke="#c9a24c" stroke-width="1"/>
+      <circle cx="380" cy="100" r="120" fill="none" stroke="#c9a24c" stroke-width="1" stroke-dasharray="4 8"/>
+    </svg>
+    <div class="content">
+      <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+      <div class="eyebrow">GH Elite Training</div>
+      <div class="middle">
+        <div class="main-text">PRIVATE<br><span>POSITION-</span><br>SPECIFIC<br>COACHING</div>
+        <div class="divider-line"></div>
+        <div class="price-block">
+          <div class="price-item">
+            <div class="price-amount">$65</div>
+            <div class="price-unit">/ session</div>
+            <div class="price-type">Individual</div>
+          </div>
+          <div class="price-item">
+            <div class="price-amount">$50</div>
+            <div class="price-unit">/ player</div>
+            <div class="price-type">Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="contact">
+          <strong>(724) 920-4743</strong><br>
+          ghelitefooty@gmail.com<br>
+          @ghelitetraining
+        </div>
+        <a href="https://calendar.app.google/3c8K9gwPPUSbHGCK7" target="_blank" class="cta-btn">Book a Session</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ DESIGN 3 -->
+<div class="post-wrap">
+  <div class="label">③ Coaches Card — Instagram Square</div>
+  <div class="d3">
+    <div class="top-bar">
+      <span class="brand">GH <span>ELITE</span> TRAINING</span>
+      <span class="tag">Greggs &amp; Higginbotham</span>
+    </div>
+    <div class="photos" style="position:relative;">
+      <div class="photo-half">
+        <img src="assets/greggs-headshot-slippery-rock.jpeg" alt="Dylan Greggs">
+        <div class="overlay"></div>
+        <div class="name">
+          <h3>DYLAN GREGGS</h3>
+          <p>NPSL · NCAA D1 &amp; D2 · Riverhounds Academy</p>
+        </div>
+      </div>
+      <div class="center-line"></div>
+      <div class="logo-center">
+        <img src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+      </div>
+      <div class="photo-half">
+        <img src="assets/higginbotham-headshot.jpeg" alt="Jak Higginbotham">
+        <div class="overlay"></div>
+        <div class="name">
+          <h3>JAK HIGGINBOTHAM</h3>
+          <p>USL League Two · NCAA D1 &amp; D2 · Sunderland AFC</p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <span class="site">ghelitefooty@gmail.com</span>
+      <span class="cta">Book a Session</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ DESIGN 4 -->
+<div class="post-wrap">
+  <div class="label">④ Facebook / Landscape Ad</div>
+  <div class="d4">
+    <div class="photo-side">
+      <img src="assets/greggs-north-catholic-celebration.png" alt="">
+      <div class="tint"></div>
+      <div class="gold-stripe"></div>
+    </div>
+    <div class="text-side">
+      <div>
+        <div class="top">
+          <div>
+            <div class="eyebrow">Position-Specific Soccer Coaching</div>
+            <div class="headline">BUILT FROM<br><span>EXPERIENCE.</span><br>DESIGNED<br>FOR YOU.</div>
+          </div>
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        </div>
+        <div class="body">Real game scenarios. Real technique. Sessions built around your position — individual or group.</div>
+        <div class="pricing-row">
+          <div class="price-pill">
+            <div class="amt">$65</div>
+            <div class="lbl">Individual / session</div>
+          </div>
+          <div class="price-pill">
+            <div class="amt">$50</div>
+            <div class="lbl">Group / player</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="contact">
+          <strong>(724) 920-4743</strong><br>
+          ghelitefooty@gmail.com
+        </div>
+        <div class="cta">Book Now →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

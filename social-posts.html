@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GH Elite — Social Posts</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #111113;
+  font-family: 'Inter', sans-serif;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.section-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #c9a24c;
+  border-bottom: 1px solid #2a2a2e;
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: -40px;
+}
+
+.row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.post-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #5a5a60;
+}
+
+/* ================================================================
+   STORIES — 9:16 — 360 × 640
+================================================================ */
+
+.story {
+  width: 360px;
+  height: 640px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0b;
+  flex-shrink: 0;
+}
+
+/* ---- Story 1: Bold / Dark ---- */
+.s1 .bg {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-college-action.png') center 30% / cover no-repeat;
+  filter: brightness(0.38) saturate(0.5);
+}
+.s1 .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10,10,11,0.7) 0%,
+    rgba(10,10,11,0.1) 35%,
+    rgba(10,10,11,0.1) 55%,
+    rgba(10,10,11,0.95) 85%,
+    #0a0a0b 100%
+  );
+}
+.s1 .corner-tl {
+  position: absolute; top: 28px; left: 28px;
+  width: 36px; height: 36px;
+  border-top: 2px solid #c9a24c;
+  border-left: 2px solid #c9a24c;
+}
+.s1 .corner-br {
+  position: absolute; bottom: 28px; right: 28px;
+  width: 36px; height: 36px;
+  border-bottom: 2px solid #c9a24c;
+  border-right: 2px solid #c9a24c;
+}
+.s1 .content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 44px 36px;
+}
+.s1 .logo { height: 44px; width: auto; border-radius: 2px; }
+.s1 .headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 78px; line-height: .88;
+  letter-spacing: .02em;
+  color: #f3f1ec;
+}
+.s1 .headline em { color: #c9a24c; font-style: normal; }
+.s1 .sub {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #9a978f;
+  margin-top: 14px;
+  line-height: 1.8;
+}
+.s1 .contact-block {
+  border-top: 1px solid rgba(201,162,76,0.3);
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.s1 .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.s1 .c-icon {
+  width: 34px; height: 34px;
+  border: 1px solid rgba(201,162,76,0.5);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.s1 .c-icon svg { opacity: .8; }
+.s1 .c-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px; letter-spacing: .06em;
+  color: #f3f1ec;
+}
+.s1 .c-label {
+  font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #9a978f;
+  margin-bottom: 1px;
+}
+
+/* ---- Story 2: Split / Championship ---- */
+.s2 .bg {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-headshot-slippery-rock.jpeg') center top / cover no-repeat;
+  filter: brightness(0.32) saturate(0.45);
+}
+.s2 .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10,10,11,0.8) 0%,
+    rgba(10,10,11,0) 30%,
+    rgba(10,10,11,0) 55%,
+    rgba(10,10,11,0.98) 80%
+  );
+}
+.s2 .gold-strip {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, transparent, #c9a24c 20%, #c9a24c 80%, transparent);
+}
+.s2 .circle-bg {
+  position: absolute;
+  right: -80px; top: 40%;
+  width: 280px; height: 280px;
+  border: 1px solid rgba(201,162,76,0.15);
+  border-radius: 50%;
+}
+.s2 .content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 32px 44px 36px;
+}
+.s2 .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.s2 .logo { height: 42px; width: auto; border-radius: 2px; }
+.s2 .badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.5);
+  padding: 6px 10px;
+  border-radius: 2px;
+}
+.s2 .mid {
+  text-align: center;
+}
+.s2 .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #c9a24c;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.s2 .eyebrow::before, .s2 .eyebrow::after {
+  content: ''; display: block;
+  height: 1px; width: 24px;
+  background: #c9a24c;
+}
+.s2 .big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 92px; line-height: .85;
+  letter-spacing: .02em;
+  color: #f3f1ec;
+  margin-top: 10px;
+}
+.s2 .big em { color: #c9a24c; font-style: normal; }
+.s2 .tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #9a978f;
+  margin-top: 14px;
+  line-height: 1.7;
+  max-width: 240px;
+  margin-left: auto; margin-right: auto;
+}
+.s2 .bottom {
+  background: rgba(201,162,76,0.06);
+  border: 1px solid rgba(201,162,76,0.25);
+  border-radius: 4px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s2 .contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.s2 .c-lbl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #c9a24c;
+}
+.s2 .c-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px; letter-spacing: .06em;
+  color: #f3f1ec;
+}
+.s2 .divider { height: 1px; background: rgba(201,162,76,0.2); }
+
+/* ---- Story 3: Autograph / Personal ---- */
+.s3 .bg {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-riverhounds-academy.jpeg') center 20% / cover no-repeat;
+  filter: brightness(0.3) saturate(0.4);
+}
+.s3 .overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(201,162,76,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(10,10,11,0.6) 0%, rgba(10,10,11,0) 40%, rgba(10,10,11,0.95) 75%);
+}
+.s3 .diag {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  opacity: .12;
+}
+.s3 .content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 42px 34px;
+}
+.s3 .top { display: flex; align-items: center; gap: 14px; }
+.s3 .logo { height: 40px; width: auto; border-radius: 2px; }
+.s3 .brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: .08em;
+  color: #f3f1ec;
+}
+.s3 .brand span { color: #c9a24c; }
+.s3 .mid { text-align: left; }
+.s3 .mid-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #c9a24c;
+}
+.s3 .mid-head {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px; line-height: .9;
+  color: #f3f1ec;
+  margin-top: 8px;
+}
+.s3 .mid-head em { color: #c9a24c; font-style: normal; }
+.s3 .mid-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #9a978f;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 260px;
+}
+.s3 .contact-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s3 .pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(10,10,11,0.7);
+  border: 1px solid rgba(201,162,76,0.3);
+  border-radius: 40px;
+  padding: 12px 18px;
+}
+.s3 .pill-icon {
+  width: 28px; height: 28px;
+  background: #c9a24c;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.s3 .pill-icon svg { color: #0a0a0b; }
+.s3 .pill-info {}
+.s3 .pill-lbl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #c9a24c;
+}
+.s3 .pill-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px; letter-spacing: .06em;
+  color: #f3f1ec;
+}
+.s3 .handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5a5a60;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ================================================================
+   RESUME POSTS — 1:1 Square — 560 × 560
+================================================================ */
+
+.sq {
+  width: 560px;
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0b;
+  flex-shrink: 0;
+}
+
+/* ---- Dylan Post 1: Headshot + Stats ---- */
+.d1sq .photo {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-headshot-slippery-rock.jpeg') center top / cover no-repeat;
+  filter: brightness(0.3) saturate(0.4);
+}
+.d1sq .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,11,0.95) 40%, rgba(10,10,11,0.4) 100%);
+}
+.d1sq .gold-bar { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #c9a24c; }
+.d1sq .content {
+  position: absolute; inset: 0;
+  padding: 32px 32px 32px 36px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.d1sq .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.d1sq .logo { height: 40px; width: auto; border-radius: 2px; }
+.d1sq .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: #c9a24c;
+}
+.d1sq .name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px; line-height: .9;
+  color: #f3f1ec; margin-top: 6px;
+}
+.d1sq .name span { color: #c9a24c; }
+.d1sq .pos {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 6px;
+}
+.d1sq .stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.d1sq .stat {
+  border-top: 1px solid rgba(201,162,76,0.3);
+  padding-top: 10px;
+}
+.d1sq .stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; color: #c9a24c; line-height: 1;
+}
+.d1sq .stat-lbl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 2px; line-height: 1.3;
+}
+.d1sq .bottom-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+  text-align: right;
+}
+
+/* ---- Dylan Post 2: Celebration / Timeline ---- */
+.d2sq .photo {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-north-catholic-celebration.png') center 25% / cover no-repeat;
+  filter: brightness(0.28) saturate(0.4);
+}
+.d2sq .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,11,0.85) 0%, rgba(10,10,11,0.1) 45%, rgba(10,10,11,0.9) 100%);
+}
+.d2sq .content {
+  position: absolute; inset: 0;
+  padding: 30px 32px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.d2sq .top-row { display: flex; justify-content: space-between; align-items: center; }
+.d2sq .logo { height: 36px; width: auto; border-radius: 2px; }
+.d2sq .tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.4);
+  padding: 4px 10px; border-radius: 2px;
+}
+.d2sq .title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px; line-height: .92;
+  color: #f3f1ec; text-align: center;
+}
+.d2sq .title em { color: #c9a24c; font-style: normal; }
+.d2sq .timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.d2sq .tl-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.d2sq .tl-item:last-child { border-bottom: none; }
+.d2sq .tl-dot {
+  width: 8px; height: 8px;
+  background: #c9a24c; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.d2sq .tl-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px; letter-spacing: .06em;
+  color: #9a978f; line-height: 1.4;
+}
+.d2sq .tl-text strong { color: #f3f1ec; font-weight: 500; }
+.d2sq .bottom-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+  text-align: center;
+}
+
+/* ---- Jak Post 1: Headshot + Stats ---- */
+.j1sq .photo {
+  position: absolute; inset: 0;
+  background: url('assets/higginbotham-headshot.jpeg') center top / cover no-repeat;
+  filter: brightness(0.28) saturate(0.4);
+}
+.j1sq .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,11,0.95) 40%, rgba(10,10,11,0.35) 100%);
+}
+.j1sq .gold-bar { position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: #c9a24c; }
+.j1sq .content {
+  position: absolute; inset: 0;
+  padding: 32px 36px 32px 32px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.j1sq .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.j1sq .logo { height: 40px; width: auto; border-radius: 2px; }
+.j1sq .flag {
+  width: 28px; height: 18px;
+  background: url('https://flagcdn.com/w40/gb-eng.png') center/cover no-repeat;
+  border-radius: 2px;
+  opacity: .85;
+}
+.j1sq .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: #c9a24c;
+}
+.j1sq .name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; line-height: .9;
+  color: #f3f1ec; margin-top: 6px;
+}
+.j1sq .name span { color: #c9a24c; }
+.j1sq .pos {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 6px;
+}
+.j1sq .stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.j1sq .stat {
+  border-top: 1px solid rgba(201,162,76,0.3);
+  padding-top: 10px;
+}
+.j1sq .stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; color: #c9a24c; line-height: 1;
+}
+.j1sq .stat-lbl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 2px; line-height: 1.3;
+}
+.j1sq .bottom-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+  text-align: right;
+}
+
+/* ---- Jak Post 2: England Action / Career ---- */
+.j2sq .photo {
+  position: absolute; inset: 0;
+  background: url('assets/IMG_3060.JPG') center 30% / cover no-repeat;
+  filter: brightness(0.28) saturate(0.4);
+}
+.j2sq .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,11,0.9) 0%, rgba(10,10,11,0.05) 40%, rgba(10,10,11,0.92) 100%);
+}
+.j2sq .content {
+  position: absolute; inset: 0;
+  padding: 30px 32px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.j2sq .top-row { display: flex; justify-content: space-between; align-items: center; }
+.j2sq .logo { height: 36px; width: auto; border-radius: 2px; }
+.j2sq .tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.4);
+  padding: 4px 10px; border-radius: 2px;
+}
+.j2sq .title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px; line-height: .92;
+  color: #f3f1ec; text-align: center;
+}
+.j2sq .title em { color: #c9a24c; font-style: normal; }
+.j2sq .timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.j2sq .tl-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.j2sq .tl-item:last-child { border-bottom: none; }
+.j2sq .tl-dot {
+  width: 8px; height: 8px;
+  background: #c9a24c; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.j2sq .tl-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px; letter-spacing: .06em;
+  color: #9a978f; line-height: 1.4;
+}
+.j2sq .tl-text strong { color: #f3f1ec; font-weight: 500; }
+.j2sq .bottom-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ STORIES -->
+<div class="section-label">Instagram Stories — Contact</div>
+
+<div class="row">
+
+  <!-- STORY 1 -->
+  <div class="post-wrap">
+    <div class="post-label">Story 1</div>
+    <div class="story s1">
+      <div class="bg"></div>
+      <div class="overlay"></div>
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="content">
+        <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        <div>
+          <div class="headline">ELITE<br><em>TRAINING</em><br>REAL<br>EXPERIENCE.</div>
+          <div class="sub">
+            Position-specific training.<br>
+            Real game scenarios.<br>
+            Built around you.
+          </div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-item">
+            <div class="c-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a24c" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Phone</div>
+              <div class="c-text">(724) 920-4743</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a24c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Email</div>
+              <div class="c-text">ghelitefooty@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY 2 -->
+  <div class="post-wrap">
+    <div class="post-label">Story 2</div>
+    <div class="story s2">
+      <div class="bg"></div>
+      <div class="overlay"></div>
+      <div class="gold-strip"></div>
+      <div class="circle-bg"></div>
+      <div class="content">
+        <div class="top">
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+          <span class="badge">Private Coaching</span>
+        </div>
+        <div class="mid">
+          <div class="eyebrow">GH Elite Training</div>
+          <div class="big">YOUR<br><em>GAME.</em><br>ELEVATED.</div>
+          <div class="tagline">Individual &amp; group sessions built around your position and what you're working to improve.</div>
+        </div>
+        <div class="bottom">
+          <div class="contact-row">
+            <div class="c-lbl">Phone</div>
+            <div class="c-val">(724) 920-4743</div>
+          </div>
+          <div class="divider"></div>
+          <div class="contact-row">
+            <div class="c-lbl">Email</div>
+            <div class="c-val">ghelitefooty@gmail.com</div>
+          </div>
+          <div class="divider"></div>
+          <div class="contact-row">
+            <div class="c-lbl">Instagram</div>
+            <div class="c-val">@ghelitetraining</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY 3 -->
+  <div class="post-wrap">
+    <div class="post-label">Story 3</div>
+    <div class="story s3">
+      <div class="bg"></div>
+      <div class="overlay"></div>
+      <svg class="diag" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice">
+        <line x1="-60" y1="0" x2="420" y2="640" stroke="#c9a24c" stroke-width="1.5"/>
+        <line x1="60" y1="0" x2="540" y2="640" stroke="#c9a24c" stroke-width="1"/>
+        <circle cx="340" cy="80" r="100" fill="none" stroke="#c9a24c" stroke-width="1" stroke-dasharray="3 7"/>
+      </svg>
+      <div class="content">
+        <div class="top">
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+          <div class="brand">GH <span>ELITE</span></div>
+        </div>
+        <div class="mid">
+          <div class="mid-eyebrow">Position-Specific Coaching</div>
+          <div class="mid-head">TRAIN<br><em>SMARTER.</em><br>PLAY<br>BETTER.</div>
+          <div class="mid-sub">Every session is built around your exact role on the field.</div>
+        </div>
+        <div class="contact-pills">
+          <div class="pill">
+            <div class="pill-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="pill-info">
+              <div class="pill-lbl">Call or Text</div>
+              <div class="pill-val">(724) 920-4743</div>
+            </div>
+          </div>
+          <div class="pill">
+            <div class="pill-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="pill-info">
+              <div class="pill-lbl">Email</div>
+              <div class="pill-val">ghelitefooty@gmail.com</div>
+            </div>
+          </div>
+          <div class="handle">@ghelitetraining</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ DYLAN POSTS -->
+<div class="section-label">Dylan Greggs — Resume Posts</div>
+
+<div class="row">
+
+  <!-- DYLAN POST 1: Stats Card -->
+  <div class="post-wrap">
+    <div class="post-label">Dylan — Credentials</div>
+    <div class="sq d1sq">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <div class="gold-bar"></div>
+      <div class="content">
+        <div class="top">
+          <div>
+            <div class="eyebrow">Meet Your Coach</div>
+            <div class="name">DYLAN<br><span>GREGGS</span></div>
+            <div class="pos">Right Back · Center Mid</div>
+          </div>
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">D1 + D2</div>
+            <div class="stat-lbl">NCAA Level</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2×</div>
+            <div class="stat-lbl">Conference Champion<br>NEC + PSAC</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">SRU</div>
+            <div class="stat-lbl">Slippery Rock University<br>Current</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">NPSL</div>
+            <div class="stat-lbl">Erie Commodores<br>2-Year Starter</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3×</div>
+            <div class="stat-lbl">All-Section<br>North Catholic HS</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">ECNL</div>
+            <div class="stat-lbl">Riverhounds Academy<br>Age 12–17</div>
+          </div>
+        </div>
+        <div class="bottom-tag">ghelitetraining · @ghelitefooty</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYLAN POST 2: Playing Path -->
+  <div class="post-wrap">
+    <div class="post-label">Dylan — Playing Path</div>
+    <div class="sq d2sq">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="top-row">
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+          <span class="tag">Dylan Greggs</span>
+        </div>
+        <div class="title">PLAYING<br><em>PATH</em></div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Riverhounds Academy (ECNL)</strong> — Age 12–17. Dallas Cup appearance.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>North Catholic HS</strong> — Captain. Senior season: 38 goals (2nd in WPIAL). 3× All-Section. 2× All-WPIAL. WPIAL Final.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Mercyhurst University</strong> — PSAC Champion (D2). NEC Conference Champion (D1).</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Slippery Rock University</strong> — Started 14 of 17 games. 5th-year senior.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Erie Commodores (NPSL)</strong> — 2-year starter in USL's pre-professional pathway.</div>
+          </div>
+        </div>
+        <div class="bottom-tag">@ghelitetraining · ghelitefooty@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ JAK POSTS -->
+<div class="section-label">Jak Higginbotham — Resume Posts</div>
+
+<div class="row">
+
+  <!-- JAK POST 1: Stats Card -->
+  <div class="post-wrap">
+    <div class="post-label">Jak — Stats & Credentials</div>
+    <div class="sq j1sq">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <div class="gold-bar"></div>
+      <div class="content">
+        <div class="top">
+          <div>
+            <div class="eyebrow">Meet Your Coach</div>
+            <div class="name">JAK<br><span>HIGGINBOTHAM</span></div>
+            <div class="pos">Centre Back · 6'2" · English</div>
+          </div>
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">D1 + D2</div>
+            <div class="stat-lbl">NCAA Level<br>Akron + Mercyhurst</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2×</div>
+            <div class="stat-lbl">Conference Champion<br>MAC + NEC</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">11/12</div>
+            <div class="stat-lbl">USL League Two Starts<br>Cleveland Force SC</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">CPT</div>
+            <div class="stat-lbl">Captain<br>Cleveland Force SC</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">PRO</div>
+            <div class="stat-lbl">Sunderland AFC Academy<br>Crewe Alexandra</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">PHI</div>
+            <div class="stat-lbl">Philadelphia Union<br>Development Pathway</div>
+          </div>
+        </div>
+        <div class="bottom-tag">ghelitetraining · @ghelitefooty</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAK POST 2: Career Timeline -->
+  <div class="post-wrap">
+    <div class="post-label">Jak — Playing Path</div>
+    <div class="sq j2sq">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="top-row">
+          <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+          <span class="tag">Jak Higginbotham</span>
+        </div>
+        <div class="title">PLAYING<br><em>PATH</em></div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Sunderland AFC + Crewe Alexandra</strong> — English professional academies. Son of former Premier League defender Danny Higginbotham.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Philadelphia Union</strong> — Development pathway. Elite youth training environment.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>University of Akron (NCAA D1)</strong> — MAC Conference Champion.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Mercyhurst University (NCAA D1)</strong> — NEC Conference Champion. Current.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-text"><strong>Cleveland Force SC (USL League Two)</strong> — Captain. 11 starts in first 12 matches, 2025.</div>
+          </div>
+        </div>
+        <div class="bottom-tag">@ghelitetraining · ghelitefooty@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
