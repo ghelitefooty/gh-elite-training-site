@@ -13,6 +13,15 @@
   .photo-grid img { width:100%; height:220px; object-fit:cover; border-radius:4px; border:1px solid var(--line); }
   .photo-grid figcaption { font-family:var(--label); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--grey); margin-top:8px; }
   @media (max-width:900px){ .photo-grid{ grid-template-columns:repeat(2,1fr); } }
+  .timeline { border-left:2px solid var(--line); padding-left:24px; margin-top:10px; }
+  .timeline-item { position:relative; padding-bottom:26px; }
+  .timeline-item:last-child{ padding-bottom:0; }
+  .timeline-item::before {
+    content:""; position:absolute; left:-30px; top:4px; width:10px; height:10px;
+    background:var(--gold); border-radius:50%;
+  }
+  .timeline-item h4 { font-family:var(--label); font-size:15px; letter-spacing:.04em; text-transform:uppercase; color:var(--white); margin-bottom:4px; }
+  .timeline-item p { margin:0; }
 </style>
 </head>
 <body>
@@ -39,9 +48,10 @@
     <div class="eyebrow">Meet Your Coach</div>
     <h1 style="margin-top:16px;">JAK <span class="gold">HIGGINBOTHAM</span></h1>
     <div style="margin-top:18px;">
-      <span class="tag">[Position]</span>
-      <span class="tag">[Years Coaching]</span>
-      <span class="tag">[License / Cert]</span>
+      <span class="tag">Centre Back</span>
+      <span class="tag">English</span>
+      <span class="tag">NCAA D1 &amp; D2</span>
+      <span class="tag">USL League Two</span>
     </div>
   </div>
 </section>
@@ -60,11 +70,37 @@
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="Jak Higginbotham intro" frameborder="0" allowfullscreen></iframe>
       </div>
       -->
-      <h3 style="margin-top:28px;">My Story</h3>
+      <h3 style="margin-top:28px;">Background</h3>
       <p style="margin-top:12px;">
-        [Placeholder — Jak Higginbotham' soccer story: where you grew up playing, the level you reached,
-        the moment coaching became the goal, and what drives your approach with players today.]
+        Jak Higginbotham grew up inside professional football from the start — son of former Premier League
+        defender Danny Higginbotham, he developed through the academies of Sunderland AFC and Crewe Alexandra,
+        building the tactical and technical foundation that comes from years inside English professional
+        environments. That upbringing didn't just teach him the game; it shaped how he understands it at
+        a level most players never access.
       </p>
+      <p>
+        After crossing the Atlantic, Jak competed at Notre Dame College before joining the University of Akron
+        — one of the most decorated programs in NCAA Division I history — where he trained daily alongside
+        future professionals. He then transferred to Mercyhurst University (NCAA Division II), where he
+        continues to anchor the defensive unit while completing a degree in Sport Business Management.
+        Alongside college ball, he earned 11 starts in the first 12 matches of the 2025 USL League Two
+        season with Cleveland Force SC — establishing himself against elite pre-professional competition
+        before a season-ending ACL injury cut the run short.
+      </p>
+      <p>
+        Jak's experience spans English professional academies, the Philadelphia Union development pathway,
+        NCAA Division I and II, and USL League Two. He brings that cross-system perspective directly
+        into sessions — coaching defenders on the technical demands, positional discipline, and game
+        intelligence that high-level play requires.
+      </p>
+      <ul style="margin-top:24px; padding-left:18px; line-height:2; color:var(--grey);">
+        <li>Sunderland AFC &amp; Crewe Alexandra Academies (England)</li>
+        <li>Philadelphia Union Development Pathway</li>
+        <li>University of Akron (NCAA Division I)</li>
+        <li>Mercyhurst University (NCAA Division II, current)</li>
+        <li>Cleveland Force SC — 11 starts in 12 matches (USL League Two)</li>
+        <li>Son of Danny Higginbotham, former Premier League defender</li>
+      </ul>
     </div>
     <div>
       <img src="assets/higginbotham-headshot.jpeg" alt="Jak Higginbotham headshot" style="border-radius:4px; border:1px solid var(--line); width:100%;">
@@ -74,34 +110,38 @@
 
 <hr class="divider">
 
-<!-- ============================================================ CREDENTIALS -->
+<!-- ============================================================ PATH -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Playing &amp; Coaching Background</div>
-      <h2>Credentials</h2>
+      <div class="eyebrow">Playing Path</div>
+      <h2>From England to USL</h2>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
-      <div class="card">
-        <h3 style="font-size:20px;">Playing Career</h3>
-        <ul style="margin-top:14px; padding-left:18px; color:var(--grey);">
-          <li>[Club / school program]</li>
-          <li>[Level reached — e.g. college, semi-pro]</li>
-          <li>[Notable achievement or honor]</li>
-        </ul>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Sunderland AFC &amp; Crewe Alexandra Academies</h4>
+        <p>Developed through two respected English professional academies, building a strong tactical and technical foundation from an early age inside a professional football culture.</p>
       </div>
-      <div class="card">
-        <h3 style="font-size:20px;">Coaching Career</h3>
-        <ul style="margin-top:14px; padding-left:18px; color:var(--grey);">
-          <li>[Coaching license(s)]</li>
-          <li>[Club / team currently coaching]</li>
-          <li>[Years of coaching experience]</li>
-        </ul>
+      <div class="timeline-item">
+        <h4>Philadelphia Union — Development Pathway</h4>
+        <p>Gained professional training environment experience and competed against elite young talent within the Philadelphia Union's player development structure.</p>
       </div>
-    </div>
-    <div style="margin-top:28px;">
-      <div class="placeholder-note">Placeholder — link a PDF once resume is ready</div>
-      <a href="#" class="btn btn-ghost">Download Full Resume (PDF)</a>
+      <div class="timeline-item">
+        <h4>Notre Dame College</h4>
+        <p>Began his collegiate career in the United States, establishing a strong foundation before moving to a higher-level program.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>University of Akron — NCAA Division I</h4>
+        <p>Joined one of the most successful programs in NCAA D1 history. Trained daily in an elite environment alongside future professionals in a nationally recognized program.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Mercyhurst University — NCAA Division II (Current)</h4>
+        <p>Anchors the defensive unit for the Lakers in one of the nation's top D2 conferences. Completing a degree in Sport Business Management.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Cleveland Force SC — USL League Two (2025)</h4>
+        <p>Started 11 of the club's first 12 matches as a central defender against elite NCAA and aspiring professional players. Season cut short by an ACL injury after establishing himself as a consistent starter.</p>
+      </div>
     </div>
   </div>
 </section>
