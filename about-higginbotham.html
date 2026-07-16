@@ -7,6 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .photo-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:32px; }
+  .photo-grid figure { margin:0; }
+  .photo-grid img { width:100%; height:220px; object-fit:cover; border-radius:4px; border:1px solid var(--line); }
+  .photo-grid figcaption { font-family:var(--label); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--grey); margin-top:8px; }
+  @media (max-width:900px){ .photo-grid{ grid-template-columns:repeat(2,1fr); } }
+</style>
 </head>
 <body>
 
@@ -95,6 +102,29 @@
     <div style="margin-top:28px;">
       <div class="placeholder-note">Placeholder — link a PDF once resume is ready</div>
       <a href="#" class="btn btn-ghost">Download Full Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================ PHOTOS -->
+<section class="tight">
+  <div class="wrap">
+    <div class="eyebrow">On the Field</div>
+    <div class="photo-grid">
+      <figure>
+        <img src="assets/930D5022-E48E-46AC-96CA-D6AD8592A888.JPG" alt="Jak Higginbotham in action">
+      </figure>
+      <figure>
+        <img src="assets/996DD3AB-58A6-4569-8A0F-52D8275FA301.JPG" alt="Jak Higginbotham on the pitch">
+      </figure>
+      <figure>
+        <img src="assets/IMG_2989.PNG" alt="Jak Higginbotham pre-match lineup">
+      </figure>
+      <figure>
+        <img src="assets/IMG_3060.JPG" alt="Jak Higginbotham in match action">
+      </figure>
     </div>
   </div>
 </section>
