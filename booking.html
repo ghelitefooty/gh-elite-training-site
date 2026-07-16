@@ -64,7 +64,7 @@
 <section>
   <div class="wrap">
     <div class="eyebrow" style="margin-bottom:16px;">Payment</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+    <div class="grid-2" style="gap:20px;">
       <div class="card" style="text-align:center;">
         <h3>Individual — $65</h3>
         <a href="https://venmo.com/Dylan-Greggs" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px; width:100%; justify-content:center;">Pay via Venmo</a>
@@ -87,5 +87,10 @@
   </div>
 </footer>
 
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
 </body>
 </html>

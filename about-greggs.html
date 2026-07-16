@@ -57,7 +57,7 @@
 
 <!-- ============================================================ VIDEO + PHOTO -->
 <section class="tight">
-  <div class="wrap" style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:start;">
+  <div class="wrap"><div class="grid-bio">
     <div>
       <div class="placeholder-note">Placeholder — embed intro video once filmed</div>
       <div style="aspect-ratio:16/9; background:var(--black-soft); border:1px solid var(--line); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;">
@@ -103,7 +103,7 @@
       <div class="placeholder-note">Headshot — swap for a cleaner crop if you'd like a tighter frame</div>
       <img src="assets/greggs-headshot-slippery-rock.jpeg" alt="Dylan Greggs, Slippery Rock headshot" style="border-radius:4px; border:1px solid var(--line);">
     </div>
-  </div>
+  </div></div>
 </section>
 
 <hr class="divider">
@@ -215,5 +215,10 @@
   </div>
 </footer>
 
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
 </body>
 </html>

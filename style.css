@@ -277,6 +277,41 @@ footer {
   section { padding: 64px 0; }
 }
 
+/* -------------------------------------------------- responsive grids --- */
+
+.grid-2       { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.grid-2-lg    { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.grid-bio     { display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:start; }
+.grid-mission { display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start; }
+.grid-3       { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-2-lg, .grid-bio, .grid-mission, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  section { padding: 60px 0; }
+  section.tight { padding: 44px 0; }
+  .wrap { padding: 0 18px; }
+  h1 { font-size: clamp(38px, 11vw, 72px); }
+}
+
+/* -------------------------------------------------- mobile nav --------- */
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,11,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 28px;
+  gap: 18px;
+  z-index: 49;
+}
+
 /* -------------------------------------------------- placeholder flag --- */
 
 .placeholder-note {

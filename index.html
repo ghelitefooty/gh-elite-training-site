@@ -59,7 +59,7 @@
       <div class="eyebrow">Our Mission</div>
       <h2>Built from experience. Designed for you.</h2>
     </div>
-    <div style="display:grid; grid-template-columns: 1.1fr 0.9fr; gap:60px; align-items:start;">
+    <div class="grid-mission">
       <p class="lead">
         Every session we run comes from what we've lived — the positions we've played, the
         levels we've competed at, the moments that actually mattered in real games. We don't
@@ -86,7 +86,7 @@
       <div class="eyebrow">Your Coaches</div>
       <h2>Greggs &amp; Higginbotham</h2>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+    <div class="grid-2">
       <a href="about-greggs.html" class="card" style="display:block;">
         <img src="assets/greggs-headshot-slippery-rock.jpeg" alt="Dylan Greggs" style="width:100%; height:320px; object-fit:cover; object-position:center top; border-radius:4px; margin-bottom:20px; display:block;">
         <h3>Dylan Greggs</h3>
@@ -113,7 +113,7 @@
       <div class="eyebrow">What Players &amp; Parents Say</div>
       <h2>Results on the field</h2>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:16px;">
+    <div class="grid-3" style="margin-top:16px;">
       <div class="card">
         <p style="font-size:28px; color:var(--gold); margin:0 0 10px; font-family:var(--label);">"</p>
         <p class="lead" style="font-size:16px; margin-top:0;">[Testimonial quote — swap in a real one before launch]</p>
@@ -142,7 +142,7 @@
       <div class="eyebrow">In the Sessions</div>
       <h2>See the work.</h2>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px;">
+    <div class="grid-3" style="margin-top:8px;">
       <div>
         <div style="aspect-ratio:9/16; background:var(--black-soft); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
           <!-- Replace VIDEO_ID_1 with your actual YouTube short/video ID -->
@@ -177,7 +177,7 @@
       <div class="eyebrow">Pricing</div>
       <h2>Session Rates</h2>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+    <div class="grid-2">
       <div class="card">
         <div class="eyebrow" style="margin-bottom:14px;">Individual</div>
         <h2 style="font-size:56px;">$65<span style="font-size:18px; font-family:var(--body); color:var(--grey); font-weight:400;"> / session</span></h2>
@@ -250,5 +250,10 @@
   </div>
 </footer>
 
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
 </body>
 </html>
