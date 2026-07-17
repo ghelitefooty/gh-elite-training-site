@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GH Elite — Coaches Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #111113;
+  font-family: 'Inter', sans-serif;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.post-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.post-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #5a5a60;
+}
+
+/* ================================================================
+   DESIGN 1 — Split Coaches Card (600×600)
+================================================================ */
+.d1 {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0b;
+  display: flex;
+  flex-direction: column;
+}
+
+.d1 .top-bar {
+  background: #0a0a0b;
+  border-bottom: 1px solid #1e1e22;
+  padding: 14px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.d1 .brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: .1em;
+  color: #f3f1ec;
+}
+.d1 .brand em { color: #c9a24c; font-style: normal; }
+
+.d1 .eyebrow-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.4);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.d1 .photos {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.d1 .half {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.d1 .half img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.5) saturate(0.5);
+}
+
+.d1 .half .grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 25%, rgba(10,10,11,0.9) 100%);
+}
+
+.d1 .half .info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 20px 16px;
+}
+
+.d1 .half .info .name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: .04em;
+  color: #f3f1ec;
+  line-height: 1;
+}
+
+.d1 .half .info .creds {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.d1 .half .info .cred {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #9a978f;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.d1 .half .info .cred::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: #c9a24c;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.d1 .divider-line {
+  position: absolute;
+  left: 50%; top: 0; bottom: 0;
+  width: 2px;
+  background: #c9a24c;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.d1 .logo-center {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 60px; height: 60px;
+  background: #0a0a0b;
+  border: 2px solid #c9a24c;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+.d1 .logo-center img {
+  width: 46px; height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.d1 .bottom-bar {
+  background: #0a0a0b;
+  border-top: 1px solid #1e1e22;
+  padding: 12px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.d1 .bottom-bar .contact {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #5a5a60;
+}
+
+.d1 .bottom-bar .handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #c9a24c;
+}
+
+/* ================================================================
+   DESIGN 2 — Dylan Individual Card (600×600)
+================================================================ */
+.d2 {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0b;
+}
+
+.d2 .bg {
+  position: absolute; inset: 0;
+  background: url('assets/greggs-headshot-slippery-rock.jpeg') center 10% / cover no-repeat;
+  filter: brightness(0.35) saturate(0.45);
+}
+
+.d2 .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(10,10,11,0.0) 20%, rgba(10,10,11,0.85) 70%, rgba(10,10,11,0.98) 100%);
+}
+
+.d2 .gold-bar {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: 4px; background: #c9a24c;
+}
+
+.d2 .content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 32px 30px 36px;
+}
+
+.d2 .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.d2 .logo { height: 42px; width: auto; border-radius: 2px; }
+
+.d2 .pos-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.4);
+  padding: 5px 10px; border-radius: 2px;
+}
+
+.d2 .mid {}
+
+.d2 .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: #c9a24c;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.d2 .eyebrow::before {
+  content: ''; display: block;
+  width: 24px; height: 1px; background: #c9a24c;
+}
+
+.d2 .name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px; line-height: .88;
+  color: #f3f1ec; letter-spacing: .02em;
+}
+.d2 .name em { color: #c9a24c; font-style: normal; }
+
+.d2 .tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 10px;
+}
+
+.d2 .cred-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.d2 .cred-item {
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.d2 .cred-dot {
+  width: 5px; height: 5px;
+  background: #c9a24c; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+
+.d2 .cred-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .08em;
+  text-transform: uppercase; color: #9a978f;
+  line-height: 1.4;
+}
+.d2 .cred-text strong { color: #f3f1ec; display: block; font-weight: 600; }
+
+.d2 .bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(201,162,76,0.2);
+  padding-top: 14px;
+}
+
+.d2 .handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+}
+
+.d2 .brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: .1em;
+  color: #f3f1ec;
+}
+.d2 .brand em { color: #c9a24c; font-style: normal; }
+
+/* ================================================================
+   DESIGN 3 — Jak Individual Card (600×600)
+================================================================ */
+.d3 {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0b;
+}
+
+.d3 .bg {
+  position: absolute; inset: 0;
+  background: url('assets/BR9A5440.png') center 15% / cover no-repeat;
+  filter: brightness(0.32) saturate(0.4);
+}
+
+.d3 .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(10,10,11,0.0) 20%, rgba(10,10,11,0.82) 65%, rgba(10,10,11,0.98) 100%);
+}
+
+.d3 .gold-bar {
+  position: absolute; top: 0; bottom: 0; right: 0;
+  width: 4px; background: #c9a24c;
+}
+
+.d3 .content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 36px 30px 32px;
+}
+
+.d3 .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.d3 .logo { height: 42px; width: auto; border-radius: 2px; }
+
+.d3 .pos-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: #c9a24c;
+  border: 1px solid rgba(201,162,76,0.4);
+  padding: 5px 10px; border-radius: 2px;
+}
+
+.d3 .mid {}
+
+.d3 .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: #c9a24c;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.d3 .eyebrow::after {
+  content: ''; display: block;
+  width: 24px; height: 1px; background: #c9a24c;
+}
+
+.d3 .name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 62px; line-height: .88;
+  color: #f3f1ec; letter-spacing: .02em;
+}
+.d3 .name em { color: #c9a24c; font-style: normal; }
+
+.d3 .tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a978f;
+  margin-top: 10px;
+}
+
+.d3 .cred-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.d3 .cred-item {
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.d3 .cred-dot {
+  width: 5px; height: 5px;
+  background: #c9a24c; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+
+.d3 .cred-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .08em;
+  text-transform: uppercase; color: #9a978f;
+  line-height: 1.4;
+}
+.d3 .cred-text strong { color: #f3f1ec; display: block; font-weight: 600; }
+
+.d3 .bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(201,162,76,0.2);
+  padding-top: 14px;
+}
+
+.d3 .handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #5a5a60;
+}
+
+.d3 .brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: .1em;
+  color: #f3f1ec;
+}
+.d3 .brand em { color: #c9a24c; font-style: normal; }
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================ DESIGN 1: Split Card -->
+<div class="post-wrap">
+  <div class="post-label">Coaches Card — Combined</div>
+  <div class="d1">
+    <div class="top-bar">
+      <span class="brand">GH <em>ELITE</em> TRAINING</span>
+      <span class="eyebrow-tag">Your Coaches</span>
+    </div>
+    <div class="photos">
+      <div class="half">
+        <img src="assets/greggs-headshot-slippery-rock.jpeg" alt="Dylan Greggs" style="object-position: center 8%;">
+        <div class="grad"></div>
+        <div class="info">
+          <div class="name">Dylan Greggs</div>
+          <div class="creds">
+            <div class="cred">NEC + PSAC Champion</div>
+            <div class="cred">NPSL — Erie Commodores</div>
+            <div class="cred">Riverhounds Academy</div>
+          </div>
+        </div>
+      </div>
+      <div class="divider-line"></div>
+      <div class="logo-center">
+        <img src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+      </div>
+      <div class="half">
+        <img src="assets/930D5022-E48E-46AC-96CA-D6AD8592A888.JPG" alt="Jak Higginbotham" style="object-position: center 20%;">
+        <div class="grad"></div>
+        <div class="info">
+          <div class="name">Jak Higginbotham</div>
+          <div class="creds">
+            <div class="cred">MAC + NEC Champion</div>
+            <div class="cred">USL League Two Captain</div>
+            <div class="cred">Philadelphia Union</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <span class="contact">ghelitefooty@gmail.com · (724) 920-4743</span>
+      <span class="handle">@ghelitetraining</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ DESIGN 2: Dylan Card -->
+<div class="post-wrap">
+  <div class="post-label">Dylan Greggs — Coach Card</div>
+  <div class="d2">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <div class="gold-bar"></div>
+    <div class="content">
+      <div class="top">
+        <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        <span class="pos-badge">Right Back · Center Mid</span>
+      </div>
+      <div class="mid">
+        <div class="eyebrow">GH Elite Training</div>
+        <div class="name">DYLAN<br><em>GREGGS</em></div>
+        <div class="tagline">Slippery Rock University · Erie Commodores</div>
+        <div class="cred-list">
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>NEC Champion</strong>NCAA Division I</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>PSAC Champion</strong>NCAA Division II</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>NPSL Starter</strong>Erie Commodores · 2 Seasons</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>38 Goals</strong>Senior Season · 2nd WPIAL</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>3× All-Section</strong>North Catholic HS</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>ECNL</strong>Riverhounds Academy</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <span class="handle">@ghelitetraining</span>
+        <span class="brand">GH <em>ELITE</em></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ DESIGN 3: Jak Card -->
+<div class="post-wrap">
+  <div class="post-label">Jak Higginbotham — Coach Card</div>
+  <div class="d3">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <div class="gold-bar"></div>
+    <div class="content">
+      <div class="top">
+        <img class="logo" src="assets/gh-elite-logo.jpeg" alt="GH Elite">
+        <span class="pos-badge">Centre Back · 6'2" · English</span>
+      </div>
+      <div class="mid">
+        <div class="eyebrow">GH Elite Training</div>
+        <div class="name">JAK<br><em>HIGGINBOTHAM</em></div>
+        <div class="tagline">Mercyhurst University · Cleveland Force SC</div>
+        <div class="cred-list">
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>MAC Champion</strong>NCAA Division I · Akron</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>NEC Champion</strong>NCAA Division I · Mercyhurst</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>USL League Two</strong>Captain · Cleveland Force SC</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Philadelphia Union</strong>Academy</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Sunderland AFC</strong>Academy · England</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Son of</strong>Danny Higginbotham · Premier League</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <span class="handle">@ghelitetraining</span>
+        <span class="brand">GH <em>ELITE</em></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
